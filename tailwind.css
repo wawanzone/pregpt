@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+[data-hidden] {
+    @apply hidden;
+}
+
+.tooltip-content {
+    @apply opacity-0 invisible transition-opacity pointer-events-none;
+}
+.group:hover .tooltip-content,
+.tooltip-content.tooltip-show {
+    @apply opacity-100 visible pointer-events-auto z-20;
+}
